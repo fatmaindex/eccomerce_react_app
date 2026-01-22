@@ -4,7 +4,6 @@ import { resetUserData } from "../user/UserSlice";
 import { clearCart } from "../cart/Cart-Slice";
 import { clearWishlist } from "../wishlist/WishlistSlice";
 
-//create thunk action called signUp and the action payload is the api response
 //data => {user: {…}, session: {…}}
 // SignUp new user
 export const signUp = createAsyncThunk(
@@ -12,7 +11,6 @@ export const signUp = createAsyncThunk(
   async ({ email, password }, { rejectWithValue , dispatch }) => {
     const { data, error } = await supabase.auth.signUp({ email, password });
     if (error) return rejectWithValue(error.message);
-    // eslint-disable-next-line no-undef
     dispatch(resetUserData());
     return data;
   }
@@ -28,7 +26,6 @@ export const signIn = createAsyncThunk(
     if (error) {
       return rejectWithValue(error.message);
     }
-    // eslint-disable-next-line no-undef
     dispatch(resetUserData());
     return data;
   }
@@ -38,7 +35,6 @@ export const signOut = createAsyncThunk(
   "auth/signOut",
   async (_, { rejectWithValue , dispatch }) => {
     const { error } = await supabase.auth.signOut();
-    // eslint-disable-next-line no-undef
     dispatch(resetUserData());
     dispatch(clearCart());
     dispatch(clearWishlist());

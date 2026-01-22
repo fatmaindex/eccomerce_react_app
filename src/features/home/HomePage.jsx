@@ -18,11 +18,15 @@ function HomePage() {
   }, [products, activeCategory]) 
   
   // Fetch products only once on mount
-  useEffect(() => {
-    if (!products.length && !loading) {
-      dispatch(fetchProducts());
-    }
-  }, [dispatch, products, loading]);
+  // useEffect(() => {
+  //   if (!products.length && !loading) {
+  //     dispatch(fetchProducts());
+  //   }
+  // }, [dispatch, products, loading]);
+
+useEffect(() => {
+  dispatch(fetchProducts());
+}, [dispatch]); // اطلبه مرة واحدة بس عند التحميل
 
   return (
     <React.Fragment>

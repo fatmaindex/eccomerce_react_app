@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -42,10 +41,11 @@ const CategoryCarousel = ({ children }) => {
 
   // Calculate if arrows should be disabled
   const isPrevDisabled = currentSlide === 0;
+  
   const isNextDisabled =
     currentSlide >=
-    (instanceRef.current?.track.details.slides.length || 0) -
-      instanceRef.current?.options.slides.perView;
+    (instanceRef.current?.track?.details?.slides?.length || 0) -
+      (instanceRef.current?.options?.slides?.perView || 1);
 
   return (
     <div className="relative">
@@ -70,9 +70,9 @@ const CategoryCarousel = ({ children }) => {
       )}
 
       {/* Carousel Container */}
-      <div ref={sliderRef} className="keen-slider  ">
+      <div ref={sliderRef} className="keen-slider ">
         {React.Children.map(children, (child) => (
-          <div className="keen-slider__slide h-full">{child}</div>
+          <div className="h-full keen-slider__slide">{child}</div>
         ))}
       </div>
     </div>
