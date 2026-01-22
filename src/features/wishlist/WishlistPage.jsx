@@ -1,11 +1,11 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import CartProducts from "../cart/components/CartProducts";
 import { showToast } from "../toast/Toast-Slice";
 import Container from "../../components/ui/Container";
-
+import WishlistEmpty from "./WishlistEmpty";
 const WishlistPage = () => {
   const wishlistItems = useSelector((state) => state.wishlist.wishlist);
+  if (wishlistItems.length > 0) {
   return (
     <section className="flex flex-col items-center py-8 mx-auto h-max bg-lightPink">
       <Container className="flex flex-col items-center">
@@ -20,5 +20,8 @@ const WishlistPage = () => {
       </Container>
     </section>
   );
+   } else {
+    return <WishlistEmpty />;
+  }
 };
 export default WishlistPage;
