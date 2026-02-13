@@ -3,16 +3,6 @@
 
 A modern e-commerce application built with **React** and **Redux Toolkit**, designed to provide a seamless shopping experience. The app includes features like product browsing, cart management, wishlist, user authentication, and more. It uses **Supabase** as the backend for data storage and authentication, and **Redux Toolkit** with `createAsyncThunk` for state management and async operations.
 
-## Table of Contents
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Available Scripts](#available-scripts)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 - Browse products and view detailed product information.
 - Add products to cart and manage cart items.
