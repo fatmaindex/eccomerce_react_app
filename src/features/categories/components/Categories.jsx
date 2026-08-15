@@ -5,7 +5,6 @@ import { fetchCategories } from "../CategoriesSlice";
 import Container from "../../../components/ui/Container";
 import CategoryCard from "../components/CategoryCard";
 import CategoryCarousel from "../components/CategoryCarousel";
-import useGetProductsByCategory from "../../../hooks/useGetProductsByCategory";
 
 function Categories({ setCurrentPage }) {
   const { categories } = useSelector((state) => state.categories);
