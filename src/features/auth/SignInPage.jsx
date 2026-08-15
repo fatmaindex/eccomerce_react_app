@@ -2,14 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { resetLoginState, signIn } from "./authSlice";
 import { Link, useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import { LoaderCircle } from "lucide-react";
 import QuickLogin from "../../components/ui/QuickLogin";
-=======
-import { Loader, LoaderCircle } from "lucide-react";
-import QuickLogin from "../../components/ui/QuickLogin";
-import { showToast } from "../toast/Toast-Slice";
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
 
 function SignInPage() {
   const dispatch = useDispatch();

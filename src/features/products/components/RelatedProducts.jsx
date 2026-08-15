@@ -15,11 +15,7 @@ function RelatedProducts({ category }) {
   // function for filtration
   const filteredProducts = useMemo(() => {
     return products.filter((product) => product.category === category);
-<<<<<<< HEAD
   }, [products , category]);
-=======
-  }, [products]);
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
 
   return (
     <div>

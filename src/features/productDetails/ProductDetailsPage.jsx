@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductReviews from "./components/productReviews";
 import { useDispatch, useSelector } from "react-redux";
-<<<<<<< HEAD
-=======
-// import { fetchProductDetails } from "./ProaductDetails-Slice";
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
 import QuantitySelector from "../../components/ui/QuantitySelector";
 import AddToCartButton from "../../components/ui/AddToCartButton";
 import WishlistButton from "../../components/ui/WishlistButton";
@@ -27,11 +23,7 @@ function ProductDetailsPage() {
       dispatch(startLoading());
       dispatch(getProductDetails(productID));
     }
-<<<<<<< HEAD
   }, [dispatch, productID]);
-=======
-  }, [dispatch, productID, product]);
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
 
   return (
     <>
@@ -46,11 +38,7 @@ function ProductDetailsPage() {
           <div className="flex-col w-[90%] space-y-4 md:w-[50%]">
             <ProductInfo
               title={product?.title}
-<<<<<<< HEAD
               brand={product?.brand ? product.brand : "brand"}
-=======
-              brand={product.brand ? product.brand : "brand"}
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
               description={product?.description}
               rating={product?.reviews?.[2]?.rating}
               price={product?.price}
@@ -62,11 +50,7 @@ function ProductDetailsPage() {
               selectedProduct={product}
             />
             <p className="text-sm font-semibold text-green-600">
-<<<<<<< HEAD
               Only <span>{product?.stock}</span> left in stock
-=======
-              Only <span>{product.stock}</span> left in stock
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
             </p>
             <div className="flex justify-start w-full gap-8 ">
               <AddToCartButton
@@ -89,11 +73,7 @@ function ProductDetailsPage() {
           <ProductReviews reviews={product?.reviews} />
         </div>
         <div>
-<<<<<<< HEAD
           <RelatedProducts category={product?.category} />
-=======
-          <RelatedProducts category={product.category} />
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
         </div>
       </Container>
     </>

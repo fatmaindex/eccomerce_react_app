@@ -16,18 +16,10 @@ function Categories({ setCurrentPage }) {
     dispatch(fetchCategories());
   }, [dispatch]);
 
-<<<<<<< HEAD
   function getProductsByCategory(categoryName) {
     dispatch(setActiveCategory(categoryName));
     setCurrentPage(1);
   }
-=======
-
-function getProductsByCategory(categoryName) {
-  dispatch(setActiveCategory(categoryName));
-  setCurrentPage(1); 
-}
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
   const filteredCategories = categories?.filter(
     (category) =>
       ![

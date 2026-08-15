@@ -20,11 +20,7 @@ export default function Navbar() {
               Lumea
             </NavLink>
           </div>
-<<<<<<< HEAD
           {/* Icons on small screens  */}
-=======
-          {/* Icons on small screens only */}
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
           <div className="flex-none sm:hidden">
             <NavIcons />
           </div>
@@ -33,18 +29,10 @@ export default function Navbar() {
         <div className="w-full sm:w-[50%] self-center sm:flex sm:items-center sm:ml-auto sm:mr-4">
           <SearchBar />
         </div>
-<<<<<<< HEAD
         {/* Icons on large screens */}
         <div className="hidden sm:flex sm:flex-none">
           <NavIcons />
         </div>
-=======
-        {/* Icons on large screens only */}
-        <div className="hidden sm:flex sm:flex-none">
-          <NavIcons />
-        </div>
-        
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
       </Container>
     </nav>
   );

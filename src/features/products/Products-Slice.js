@@ -7,10 +7,6 @@ export const fetchProducts = createAsyncThunk(
   async () => {
     const { data, error } = await supabase
       .from("products")
-<<<<<<< HEAD
-=======
-      // .select("*")
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
       .select("*, reviews(*)")
       .order("id", { ascending: true })
       .limit(194)

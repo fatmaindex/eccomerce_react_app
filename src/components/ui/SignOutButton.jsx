@@ -24,11 +24,7 @@ function SignOutButton() {
     <button
       onClick={handleSignOut}
       disabled={loading}
-<<<<<<< HEAD
       className="flex items-center justify-center w-full px-4 py-2 mt-2 text-black border border-black rounded-md hover:text-pink hover:border-pink"
-=======
-      className="flex items-center justify-center w-full px-4 py-2 mt-2 text-black border border-black rounded-full hover:text-pink hover:border-pink"
->>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
     >
       <span> Sign Out</span>
       {loading ? <LoaderCircle className="ml-2 animate-spin" /> : ""}
