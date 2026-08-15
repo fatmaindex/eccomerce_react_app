@@ -5,9 +5,14 @@ import Container from "../../../components/ui/Container";
 import ProductCardSkeleton from "./ProductCardSkeleton";
 import { useDispatch } from "react-redux";
 import { setActiveCategory } from "../Products-Slice";
+import { useLocation } from "react-router-dom";
 
 function ProductsList({ products, productsPerPage, loading, currentPage, setCurrentPage, showTitle = true }) {
   const dispatch = useDispatch();
+  const location = useLocation();
+  
+  const isProductDetailsPage = location.pathname.includes("/product/");
+  const shouldShowTitle = showTitle && !isProductDetailsPage;
   
   let totalPages = useMemo(
     () => Math.ceil(products.length / productsPerPage),
@@ -19,7 +24,7 @@ function ProductsList({ products, productsPerPage, loading, currentPage, setCurr
 
   return (
     <Container size="xl" id="products">
-      {showTitle && (
+      {shouldShowTitle && (
         <div className="flex items-center gap-2 flex-wrap mb-6 mt-24">
           <button
             onClick={() => {
