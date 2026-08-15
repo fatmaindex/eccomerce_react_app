@@ -27,10 +27,6 @@ function HomePage() {
       <Hero />
       <Categories setCurrentPage={setCurrentPage} />
       
-      {/* Header Aligned Exactly with Products Grid Container */}
-    
-  
-
       <ProductsList
         products={filteredProducts}
         productsPerPage={12}

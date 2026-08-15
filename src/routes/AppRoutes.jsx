@@ -9,12 +9,14 @@ import WishlistPage from "../features/wishlist/WishlistPage";
 import SearchResults from "../features/products/components/SearchResults";
 import ProductDetailsPage from "../features/productDetails/ProductDetailsPage";
 import MainLayout from "../components/layout/MainLayout";
+import CatalogPage from "../features/products/components/CatalogPage";
 
 function AppRoutes() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="catalog" element={<CatalogPage />} /> 
         <Route path="cart" element={<CartPage />} />
         <Route path="wishList" element={<WishlistPage />} />
         <Route path="profile" element={<ProfilePage />} />

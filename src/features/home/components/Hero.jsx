@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import decoration from "../../../Assets/hero/decoration.jpg";
 import fragrance from "../../../Assets/hero/fragranceimg.jpg";
 import makeup from "../../../Assets/hero/makeup.jpg";
@@ -6,6 +7,20 @@ import { ShoppingBag } from "lucide-react";
 import Container from "../../../components/ui/Container";
 
 function Hero() {
+  const navigate = useNavigate();
+  
+// function to scroll to products list section
+  const scrollToProducts = () => {
+    const productsSection = document.getElementById("products");
+    if (productsSection) {
+      const yOffset = -80; 
+      const y = productsSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 850, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="relative bg-gradient-to-br from-[#FFF7F7] to-pink-50 overflow-hidden">
       <Container>
@@ -19,8 +34,9 @@ function Hero() {
         <div className="relative py-6 lg:py-12">
           <div className="grid items-start gap-12 lg:grid-cols-2">
             
-              {/* Left Text Content */}
-<div className="space-y-6 text-center lg:text-left pt-0 lg:mt-20">
+            {/* Left Text Content */}
+            <div className="space-y-6 text-center lg:text-left pt-0 lg:mt-20">
+              
               {/* Tagline */}
               <div className="inline-block px-3 py-1.5 bg-white/85 backdrop-blur-sm border border-pink-100 rounded-full shadow-sm">
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-900">
@@ -45,10 +61,19 @@ function Hero() {
 
               {/* Buttons */}
               <div className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row lg:justify-start">
-                <button className="w-48 rounded-full main-btn before:bg-softbeige bg-[#e31870] text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 py-3">
+                {/* Explore Now: بيعمل سكرول لسكشن المنتجات */}
+                <button 
+                  onClick={scrollToProducts}
+                  className="w-48 rounded-full main-btn before:bg-softbeige bg-[#e31870] text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 py-3 cursor-pointer"
+                >
                   <span className="z-10">Explore Now</span>
                 </button>
-                <button className="w-48 rounded-full bg-transparent main-btn text-[#e31870] hover:text-white before:bg-[#e31870] border-2 border-[#e31870] font-semibold transition-all duration-300 py-3">
+
+                {/* View Catalog: بينقل لصفحة الكتالوج الجديدة */}
+                <button 
+                  onClick={() => navigate("/catalog")}
+                  className="w-48 rounded-full bg-transparent main-btn text-[#e31870] hover:text-white before:bg-[#e31870] border-2 border-[#e31870] font-semibold transition-all duration-300 py-3 cursor-pointer"
+                >
                   <span className="z-10">View Catalog</span>
                 </button>
               </div>
