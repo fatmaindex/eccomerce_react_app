@@ -60,8 +60,7 @@ function CategoriesGrid({ setCurrentPage }) {
         {/* Grid Container */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
           {filteredCategories?.map((category, index) => {
-            const isActive = activeCategory === category;
-            
+            // logic الإخفاء على الموبايل
             const isHiddenOnMobile = !showAll && index >= 4;
 
             return (
@@ -69,7 +68,7 @@ function CategoriesGrid({ setCurrentPage }) {
                 key={category} 
                 className={`transition-all duration-200 ${
                   isHiddenOnMobile ? "hidden sm:block" : "block"
-                } ${isActive ? "ring-2 ring-[#e31870] ring-offset-2 scale-[1.02] rounded-2xl" : ""}`}
+                }`}
               >
                 <CategoryCard
                   category={category}
@@ -81,7 +80,6 @@ function CategoriesGrid({ setCurrentPage }) {
           })}
         </div>
 
-        {/* زرار إضافي تحت الـ Grid للموبايل */}
         {filteredCategories && filteredCategories.length > 4 && (
           <div className="mt-4 text-center sm:hidden">
             <button
