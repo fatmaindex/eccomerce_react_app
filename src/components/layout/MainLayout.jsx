@@ -12,13 +12,13 @@ function MainLayout() {
     <>
       <ToastNotification />
       {/* <h1>hellooooo</h1> */}
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Navbar />
       <Loader />
       <Outlet />
       <NewsSignup />
       <Footer />
-      <ScrollToTopButton/>
+      {/* <ScrollToTopButton/> */}
     </>
   );
 }
