@@ -4,6 +4,10 @@ import { resetUserData } from "../user/UserSlice";
 import { clearCart } from "../cart/Cart-Slice";
 import { clearWishlist } from "../wishlist/WishlistSlice";
 
+<<<<<<< HEAD
+=======
+//create thunk action called signUp and the action payload is the api response
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
 //data => {user: {…}, session: {…}}
 // SignUp new user
 export const signUp = createAsyncThunk(
@@ -11,6 +15,10 @@ export const signUp = createAsyncThunk(
   async ({ email, password }, { rejectWithValue , dispatch }) => {
     const { data, error } = await supabase.auth.signUp({ email, password });
     if (error) return rejectWithValue(error.message);
+<<<<<<< HEAD
+=======
+    // eslint-disable-next-line no-undef
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
     dispatch(resetUserData());
     return data;
   }
@@ -26,6 +34,10 @@ export const signIn = createAsyncThunk(
     if (error) {
       return rejectWithValue(error.message);
     }
+<<<<<<< HEAD
+=======
+    // eslint-disable-next-line no-undef
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
     dispatch(resetUserData());
     return data;
   }
@@ -35,6 +47,10 @@ export const signOut = createAsyncThunk(
   "auth/signOut",
   async (_, { rejectWithValue , dispatch }) => {
     const { error } = await supabase.auth.signOut();
+<<<<<<< HEAD
+=======
+    // eslint-disable-next-line no-undef
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
     dispatch(resetUserData());
     dispatch(clearCart());
     dispatch(clearWishlist());

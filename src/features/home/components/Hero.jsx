@@ -9,12 +9,20 @@ function Hero() {
   return (
     <div className="relative  lg:h-[102vh] bg-gradient-to-br from-[#FFF7F7] to-pink-50  ">
       <Container>
+<<<<<<< HEAD
+=======
+        {/* Reduced and more subtle abstract shapes */}
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-[#e31870]/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse opacity-50"></div>
           <div className="absolute bottom-1/4 right-1/3 w-48 h-48 bg-[#e31870]/5 rounded-full mix-blend-multiply filter blur-xl delay-700 opacity-30"></div>
         </div>
         <div className="container relative h-full px-4 mx-auto">
           <div className="grid items-start h-full gap-12 py-8 lg:grid-cols-2">
+<<<<<<< HEAD
+=======
+            {/* Left column - Text content */}
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
             <div className="mt-4 space-y-8 text-center lg:text-left">
               <div className="inline-block px-4 py-2 bg-white rounded-full ">
                 <span className="inline-flex items-center self-start gap-2 px-4 py-1 mb-1 text-sm font-medium text-black ">
@@ -41,6 +49,11 @@ function Hero() {
                 </button>
               </div>
             </div>
+<<<<<<< HEAD
+=======
+
+            {/* Right column - Featured items grid */}
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
             <div className="relative hidden grid-cols-2 gap-6 lg:grid">
               <div className="transform translate-y-12">
                 <div className="grid gap-6">

@@ -6,14 +6,24 @@ export const fetchCategories = createAsyncThunk(
   async () => {
     const { data, error } = await supabase
       .from("products")
+<<<<<<< HEAD
       .select("category")
       .order("id", { ascending: true })
       .neq("category", null);
+=======
+      .select("category") 
+      .order("id", { ascending: true })
+      .neq("category", null); 
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
     if (error) throw new Error(error.message);
     const uniqueCategories = [...new Set(data.map((item) => item.category))];
     return uniqueCategories;
   }
 );
+<<<<<<< HEAD
+=======
+
+>>>>>>> d52b604a71d230407eb944f2f0b296eebdc835a5
 const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
