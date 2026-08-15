@@ -13,7 +13,7 @@ SearchResults.length>0 ?
    <div>
      <h1 className=" my-8 px-[24px]  text-2xl text-gray-600  font-semibold">Search Results "{searchQuery}"</h1>
      <ProductsList products={SearchResults} productsPerPage ={12}   currentPage={currentPage}
-        setCurrentPage={setCurrentPage} />
+        setCurrentPage={setCurrentPage}  showTitle={false} />
    </div>
   :
   <SearchEmpty/>
