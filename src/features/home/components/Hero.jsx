@@ -8,13 +8,16 @@ import Container from "../../../components/ui/Container";
 
 function Hero() {
   const navigate = useNavigate();
-  
-// function to scroll to products list section
+
+  // function to scroll to products list section
   const scrollToProducts = () => {
     const productsSection = document.getElementById("products");
     if (productsSection) {
-      const yOffset = -80; 
-      const y = productsSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      const yOffset = -80;
+      const y =
+        productsSection.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     } else {
       window.scrollTo({ top: 850, behavior: "smooth" });
@@ -33,10 +36,8 @@ function Hero() {
         {/* Main Content Grid */}
         <div className="relative py-6 lg:py-12">
           <div className="grid items-start gap-12 lg:grid-cols-2">
-            
             {/* Left Text Content */}
             <div className="space-y-6 text-center lg:text-left pt-0 lg:mt-20">
-              
               {/* Tagline */}
               <div className="inline-block px-3 py-1.5 bg-white/85 backdrop-blur-sm border border-pink-100 rounded-full shadow-sm">
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-900">
@@ -47,7 +48,7 @@ function Hero() {
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.15] text-gray-900 tracking-tight">
-                Create Your 
+                Create Your
                 <span className="block mt-2 text-[#e31870] font-bold">
                   Amazing Looks & Living
                 </span>
@@ -56,37 +57,41 @@ function Hero() {
               {/* Description Paragraph */}
               <p className="max-w-xl text-base text-gray-600 mx-auto lg:mx-0 leading-relaxed">
                 Discover our curated selection of premium lifestyle products
-                that transform your everyday experiences into moments of sheer luxury.
+                that transform your everyday experiences into moments of sheer
+                luxury.
               </p>
 
-              {/* Buttons */}
-              <div className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row lg:justify-start">
-                {/* Explore Now: بيعمل سكرول لسكشن المنتجات */}
-                <button 
+              {/* Buttons (Responsive: w-full on mobile, auto on screens) */}
+              <div className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row lg:justify-start w-full">
+                {/* Explore Now */}
+                <button
                   onClick={scrollToProducts}
-                  className="w-48 rounded-full main-btn before:bg-softbeige bg-[#e31870] text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 py-3 cursor-pointer"
+                  className="w-full sm:w-auto px-10 py-3 rounded-full main-btn before:bg-softbeige bg-[#e31870] text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer min-w-[170px]"
                 >
                   <span className="z-10">Explore Now</span>
                 </button>
 
-                {/* View Catalog: بينقل لصفحة الكتالوج الجديدة */}
-                <button 
+                {/* View Catalog */}
+                <button
                   onClick={() => navigate("/catalog")}
-                  className="w-48 rounded-full bg-transparent main-btn text-[#e31870] hover:text-white before:bg-[#e31870] border-2 border-[#e31870] font-semibold transition-all duration-300 py-3 cursor-pointer"
+                  className="w-full sm:w-auto px-10 py-3 rounded-full bg-transparent main-btn text-[#e31870] hover:text-white before:bg-[#e31870] border-2 border-[#e31870] font-semibold transition-all duration-300 flex items-center justify-center cursor-pointer min-w-[170px]"
                 >
                   <span className="z-10">View Catalog</span>
                 </button>
               </div>
-
             </div>
-            
+
             {/* Right Side Images */}
             <div className="relative hidden grid-cols-2 gap-6 lg:grid">
               <div className="transform translate-y-6">
                 <div className="grid gap-6">
                   <div className="p-5 transition-shadow bg-white shadow-md rounded-2xl hover:shadow-xl">
                     <div className="aspect-square bg-gradient-to-br from-[#e31870]/10 to-pink-50 rounded-xl flex items-center justify-center">
-                      <img src={makeup} alt="makeupImage" className="max-w-full h-auto"/>
+                      <img
+                        src={makeup}
+                        alt="makeupImage"
+                        className="max-w-full h-auto"
+                      />
                     </div>
                   </div>
                 </div>
@@ -104,13 +109,16 @@ function Hero() {
                   </div>
                   <div className="p-5 transition-shadow bg-white shadow-md rounded-2xl hover:shadow-xl">
                     <div className="aspect-square bg-gradient-to-br from-purple-50 to-[#e31870]/10 rounded-xl flex items-center justify-center">
-                      <img src={decoration} alt="decorationImage" className="max-w-full h-auto"/>
+                      <img
+                        src={decoration}
+                        alt="decorationImage"
+                        className="max-w-full h-auto"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </Container>
